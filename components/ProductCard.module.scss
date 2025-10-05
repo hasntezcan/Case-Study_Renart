@@ -1,0 +1,50 @@
+.card {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 280px;  
+  margin-bottom: 15px;
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  color: #151515;
+  margin: 8px 0 8px;
+}
+
+.price {
+  color: #151515;
+  margin-bottom: 8px;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ratingText {
+  font-family: var(--font-avenir);
+  font-size: 14px;
+  color: #171717;
+}

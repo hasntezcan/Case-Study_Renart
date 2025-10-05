@@ -1,0 +1,53 @@
+
+$yellow: #e6ca97; /* Yellow Gold */
+$white:  #d9d9d9; /* White Gold */
+$rose:   #e1a4a9; /* Rose Gold */
+
+.wrap {
+  display: flex;
+}
+
+.swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.swatch {
+  position: relative;
+  width: 24px;  
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent; 
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;               
+    border-radius: 50%;
+    background: #ccc;      
+    transition: inset 120ms ease, transform 120ms ease;
+  }
+
+  &[aria-checked="true"] {
+    width: 26px;   
+    height: 26px;
+    border-color: #000;     
+    &::before {
+      inset: 3px;          
+    }
+  }
+  &[data-color="yellow"]::before { background: $yellow; }
+  &[data-color="white"]::before  { background: $white;  }
+  &[data-color="rose"]::before   { background: $rose;   }
+
+  &:hover::before { transform: scale(0.98); }
+
+  &:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+}
