@@ -6,8 +6,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 280px;  
+  min-width: 300px;  
   margin-bottom: 15px;
+  max-width: 400px;
 }
 
 .imageWrap {
