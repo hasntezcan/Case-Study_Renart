@@ -12,3 +12,10 @@ export type ProductApi = ProductBase & {
   currency: "USD";
   color?: "yellow" | "white" | "rose";
 };
+
+export type Filters = {
+  minPrice?: number;
+  maxPrice?: number;
+  minRating?: number;       // 0..5
+  maxRating?: number;       // 0..5
+};

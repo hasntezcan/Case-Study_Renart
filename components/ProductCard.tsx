@@ -20,12 +20,7 @@ export default function ProductCard({ product }: { product: ProductApi }) {
   const label =
     color === "yellow" ? "Yellow Gold" : color === "white" ? "White Gold" : "Rose Gold";
 
-  const displayRating =
-    typeof (product as any).rating === "number"
-      ? (product as any).rating
-      : (product as any).popularityScore
-      ? Math.max(0, Math.min(5, (product as any).popularityScore / 20))
-      : 0;
+  const displayRating = product.rating;
 
   return (
     <article className={styles.card}>
@@ -53,7 +48,7 @@ export default function ProductCard({ product }: { product: ProductApi }) {
         </div>
       </div>
 
-      <ColorPicker value={color} onChange={setColor as any} />
+      <ColorPicker value={color} onChange={setColor} />
       <div className={`avenir-12 ${styles.colorLabel}`}>{label}</div>
 
       <div className={styles.ratingRow}>

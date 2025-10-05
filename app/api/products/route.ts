@@ -26,7 +26,8 @@ export async function GET(req: NextRequest) {
     const all = await getProducts();
     const data = applyFilters(all, { minPrice, maxPrice, minPopularity, maxPopularity });
     return NextResponse.json(data);
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message ?? "Internal error" }, { status: 500 });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Internal error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

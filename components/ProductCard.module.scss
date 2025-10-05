@@ -10,6 +10,12 @@
   margin-bottom: 15px;
   max-width: 400px;
 }
+// Card hover effect
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  transform: translateY(-2px);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
 
 .imageWrap {
   width: 100%;

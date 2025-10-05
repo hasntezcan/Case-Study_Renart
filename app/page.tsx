@@ -15,7 +15,7 @@ export default async function Page({
 }: {
   searchParams: Promise<QS> | QS;
 }) {
-  const q = (searchParams as any)?.then ? await (searchParams as Promise<QS>) : ((searchParams as QS) ?? {});
+  const q: QS = (await Promise.resolve(searchParams)) ?? {};
 
   const minPrice = N(q.minPrice ?? q.priceMin ?? q.min_price);
   const maxPrice = N(q.maxPrice ?? q.priceMax ?? q.max_price);
